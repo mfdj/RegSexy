@@ -1,0 +1,22 @@
+{
+    "name": "mfdj/regsexy",
+    "description": "^stylish (RegEx|RegExp|Regular Expressions) in PHP$",
+    "license": "Creative Commons Attribution-ShareAlike 3.0 Unported License",
+    "authors": [
+        {
+            "name": "Mark Fox",
+            "email": "mf@ixel.org"
+        }
+    ],
+    "require": {
+        "php": "~5.3"
+    },
+    "require-dev": {
+        "mfdj/fluenthtml": "@stable"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
