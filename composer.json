@@ -1,6 +1,6 @@
 {
     "name": "mfdj/regsexy",
-    "description": "Simple, fluent interface for the preg_* functions. Object oriented, readable regular expressions.",
+    "description": "Clean, fluent interface for the preg_* functions. Elegant object oriented regular expression creation and processing.",
     "license": "Creative Commons Attribution-ShareAlike 3.0 Unported License",
     "authors": [
         {
