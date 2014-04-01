@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "1e7bca31659ea2ad09ab2488702c0596",
+    "packages": [
+
+    ],
+    "packages-dev": [
+        {
+            "name": "mfdj/fluenthtml",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mfdj/FluentHtml.git",
+                "reference": "028aa188183a0fa41139b40e4e78dbac77ecace4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mfdj/FluentHtml/zipball/028aa188183a0fa41139b40e4e78dbac77ecace4",
+                "reference": "028aa188183a0fa41139b40e4e78dbac77ecace4",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "DoItToIt"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Fox",
+                    "email": "mf@ixel.org"
+                }
+            ],
+            "time": "2014-03-31 22:37:44"
+        }
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": {
+        "php": "~5.3"
+    },
+    "platform-dev": [
+
+    ]
+}

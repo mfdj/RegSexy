@@ -4,7 +4,7 @@ namespace RegSexy;
 
 /**
  * PCRE Modifiers
- * http://php.net/manual/en/reference.pcre.pattern.patterns-and-Modifiers.php
+ * http://php.net/manual/en/reference.pcre.pattern.modifiers.php
  */
 class Modifiers
 {

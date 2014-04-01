@@ -1,9 +1,8 @@
 <?php
 
-// Bootstrap the example.
+require __DIR__ . '/../vendor/autoload.php';
 
 use RegSexy\RegEx;
-use RegSexy\Modifiers as m;
 
 $subject = <<< EOT
   1. RegEx
@@ -18,10 +17,11 @@ EOT;
 // (Regular Expressions|RegExp|RegEx)
 // Reg(ular)*\s*Ex(p)*(ression)*(s)*
 
-$matches = RegEx::make( '[0-9]\. (RegEx|RegExp|Regular Expressions)' )
-        ->matchAll( $subject );
+$matches = RegEx::make('[0-9]\. (RegEx|RegExp|Regular Expressions)')
+    ->matchAll($subject);
 
-while ( ! $matches->done ) {
+while (!$matches->done)
+{
     echo "<li>";
-    var_dump( $matches->next->matchString );
+    var_dump($matches->next->match);
 }

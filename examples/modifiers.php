@@ -1,40 +1,33 @@
 <?php
 
+require __DIR__ . '/../vendor/autoload.php';
 
-
-use RegSexy\RegEx;
 use RegSexy\Modifiers as mod;
+use RegSexy\RegEx;
 
 $subject = 'Waldo Dogsly and Fink 9 theo 10';
 $pattern = '(waldo)* (\w+ )+\d+';
 
-// no modifiers
-$exp = RegEx::make($pattern);
-out($exp);
+// by default no modifiers are used
 
-// defaults
-echo "Default modifiers: " . RegEx::$defaultModifiers . "\n";
-$exp = RegEx::make($pattern)->defaultModifiers();
-out($exp);
+var_dump(
+    RegEx::make($pattern)
+        ->match($subject)->match
+);
 
-// these 4 are equivalant
-$exp = RegEx::make($pattern,'iU');
-out($exp);
+// these 3 are equivalant
 
-$exp = RegEx::make($pattern, mod::CASELESS, mod::UNGREEDY);
-out($exp);
+var_dump(
+    RegEx::make($pattern, 'iU')
+        ->match($subject)->match
+);
 
-$exp = RegEx::make($pattern)->caseless()->ungreedy();
-out($exp);
+var_dump(
+    RegEx::make($pattern, mod::CASELESS, mod::UNGREEDY)
+        ->match($subject)->match
+);
 
-$exp = RegEx::make($pattern)->defaultModifiers()->dotall(false);
-out($exp);
-
-function out($exp)
-{
-    global $subject;
-
-    echo $exp . "\n";
-    var_dump($exp->match($subject)->matchString);
-    echo "\n";
-}
+var_dump(
+    RegEx::make($pattern)->caseless()->ungreedy()
+        ->match($subject)->match
+);
