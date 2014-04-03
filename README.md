@@ -16,9 +16,9 @@ $subject = 'Cats are pretty funny I love, that, what is called… "ICanHasCheezb
          . 'is pretty great… but *really* I\'m more of a dog person. Got 2 little Chihuahuas at home!';
 
 var_dump(
-    RegEx::exp( '(Chihuahua|Dachsund|Corgi)s' )
+    RegEx::make( '(Chihuahua|Dachsund|Corgi)s' )
         ->match( $subject )
-        ->matchString
+        ->match
 );
 ```
 
