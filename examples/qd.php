@@ -17,8 +17,8 @@ EOT;
 // (Regular Expressions|RegExp|RegEx)
 // Reg(ular)*\s*Ex(p)*(ression)*(s)*
 
-$matches = RegEx::make('[0-9]\. (RegEx|RegExp|Regular Expressions)')
-    ->matchAll($subject);
+$matches = RegEx::newRegEx('[0-9]\. (RegEx|RegExp|Regular Expressions)')
+    ->matchAllIn($subject);
 
 while (!$matches->done)
 {

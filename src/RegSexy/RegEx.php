@@ -20,7 +20,8 @@ class RegEx
     // Instance
     private $undelimitedPattern;
     private $modifiers;
-    private $getOffsets = true;
+    private $captureOffsets = true;
+    private $input;
 
     /**
      * A factory method for static contexts; useful for often use-it-once situations.
@@ -28,7 +29,7 @@ class RegEx
      *
      * @return RegEx
      */
-    public static function make($undelimitedPattern)
+    public static function newRegEx($undelimitedPattern)
     {
         $exp = new RegEx($undelimitedPattern);
 
@@ -130,7 +131,7 @@ class RegEx
      *
      * @return MatchList
      */
-    public function matchAll($input, $startByte = 0)
+    public function matchAllIn($input, $startByte = 0)
     {
         return $this->_match(true, $input, $startByte = 0);
     }
@@ -141,8 +142,10 @@ class RegEx
      *
      * @return Match
      */
-    public function match($input, $startByte = 0)
+    public function matchInput($input, $startByte = 0)
     {
+        $this->input = $input;
+
         return $this->_match(false, $input, $startByte = 0);
     }
 
@@ -151,7 +154,7 @@ class RegEx
      */
     private function _match($all, $input, $startByte = 0)
     {
-        $offsets = $this->getOffsets;
+        $offsets = $this->captureOffsets;
 
         if ($all)
             preg_match_all($this->getRegEx(),
@@ -290,7 +293,7 @@ class RegEx
      */
     public function withOffsetCapture($enable = true)
     {
-        $this->getOffsets = $enable;
+        $this->captureOffsets = $enable;
 
         return $this;
     }

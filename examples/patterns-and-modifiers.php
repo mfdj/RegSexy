@@ -25,17 +25,17 @@ $pattern = "#f..k th..#u";
 
 // With RegSexy you get cleaner declerations
 // • No delimiters. They are added and escaped for you, no futzing.
-$match = RegEx::make('f..k th..')->setModifiers('iU')->match('FÜNK THAT');
+$match = RegEx::newRegEx('f..k th..')->setModifiers('iU')->matchInput('FÜNK THAT');
 var_dump($match);
 
 // To specifiy your modifiers you have a couple of options.
 
 // You can simply pass a string as the second variable
-$match = RegEx::make('f..k th..', 'iu')->match('fîrk THUR')->match;
+$match = RegEx::newRegEx('f..k th..', 'iu')->matchInput('fîrk THUR')->match;
 var_dump($match);
 
 // Or you can 'use' the modifier constants (which just hold strings)
 // pass each invididually
-$match = RegEx::make('f..k th..', m::CASELESS, m::UTF8)->match('Fink Thus')->match;
+$match = RegEx::newRegEx('f..k th..', m::CASELESS, m::UTF8)->matchInput('Fink Thus')->match;
 var_dump($match);
 

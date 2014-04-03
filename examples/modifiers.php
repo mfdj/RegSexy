@@ -11,23 +11,23 @@ $pattern = '(waldo)* (\w+ )+\d+';
 // by default no modifiers are used
 
 var_dump(
-    RegEx::make($pattern)
-        ->match($subject)->match
+    RegEx::newRegEx($pattern)
+        ->matchInput($subject)->match
 );
 
 // these 3 are equivalant
 
 var_dump(
-    RegEx::make($pattern, 'iU')
-        ->match($subject)->match
+    RegEx::newRegEx($pattern, 'iU')
+        ->matchInput($subject)->match
 );
 
 var_dump(
-    RegEx::make($pattern, mod::CASELESS, mod::UNGREEDY)
-        ->match($subject)->match
+    RegEx::newRegEx($pattern, mod::CASELESS, mod::UNGREEDY)
+        ->matchInput($subject)->match
 );
 
 var_dump(
-    RegEx::make($pattern)->caseless()->ungreedy()
-        ->match($subject)->match
+    RegEx::newRegEx($pattern)->caseless()->ungreedy()
+        ->matchInput($subject)->match
 );

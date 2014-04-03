@@ -11,14 +11,14 @@ $subject = 'Cats are pretty funny I love, that, what is called… "ICanHasCheezb
     . 'is pretty great… but *really* I\'m more of a dog person. Got 2 little Chihuahuas at home!';
 
 // match() returns a Match object
-$match = RegEx::make('(Chihuahuas|ICanHasCheezburger\?)')
-    ->match($subject);
+$match = RegEx::newRegEx('(Chihuahuas|ICanHasCheezburger\?)')
+    ->matchInput($subject);
 
 var_dump($subject);
 
 // matchAll() returns a MatchList object, which is a basic itterator
-$matches = RegEx::make('(Chihuahuas|ICanHasCheezburger\?)')
-    ->matchAll($subject);
+$matches = RegEx::newRegEx('(Chihuahuas|ICanHasCheezburger\?)')
+    ->matchAllIn($subject);
 
 foreach ($matches as $index => $v)
     echo "match ".(++$index).": $v\n";
@@ -27,4 +27,4 @@ foreach ($matches as $index => $v)
 var_dump($matches->match(1)->match);
 
 // MatchList also implements __toString(), nice for quick testing
-echo RegEx::make('(Chihuahuas|ICanHasCheezburger\?)')->matchAll($subject);
+echo RegEx::newRegEx('(Chihuahuas|ICanHasCheezburger\?)')->matchAllIn($subject);

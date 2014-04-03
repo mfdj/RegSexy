@@ -10,7 +10,7 @@ $subject = 'Cats are pretty funny I love, that, what is called… "ICanHasCheezb
 
 // Create a (sexy) RegEx object
 $someCats = new RegEx('(Chesire|Tabby|Siamese|ICanHasCheezburger\?)');
-$firstCat = $someCats->match($subject);
+$firstCat = $someCats->matchInput($subject);
 
 if ($firstCat)
     var_dump($firstCat);
@@ -20,13 +20,13 @@ else
 // If you use the expression once you can use fluent syntax
 //
 var_dump(
-    (new RegEx('(Chihuahua|Dachsund|Corgi)s'))->match($subject)->match
+    (new RegEx('(Chihuahua|Dachsund|Corgi)s'))->matchInput($subject)->match
 );
 
 // the "make()" factory makes this even clenaer
 var_dump(
-    RegEx::make('(Chihuahua|Dachsund|Corgi)s')->match($subject)->match
+    RegEx::newRegEx('(Chihuahua|Dachsund|Corgi)s')->matchInput($subject)->match
 );
 
 // the Match object even implements __toString()
-echo RegEx::make('(Chihuahua|Dachsund|Corgi)s')->match($subject);
+echo RegEx::newRegEx('(Chihuahua|Dachsund|Corgi)s')->matchInput($subject);
