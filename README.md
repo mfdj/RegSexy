@@ -3,7 +3,7 @@ RegSexy
 ===========
 
 [![Latest Stable Version](https://poser.pugx.org/mfdj/regsexy/v/stable.png)](https://packagist.org/packages/mfdj/regsexy)
-[![Build Status](https://travis-ci.org/mfdj/RegSexy.png?branch=master)](http://travis-ci.org/mfdj/regsexy)
+[![Build Status](https://travis-ci.org/mfdj/RegSexy.svg?branch=master)](http://travis-ci.org/mfdj/regsexy)
 [![Code Coverage](https://scrutinizer-ci.com/g/mfdj/RegSexy/badges/coverage.png?s=873263b636bc86e757fb47b5f1fc793742acf4ce)](https://scrutinizer-ci.com/g/mfdj/RegSexy/)
 
 A library that abstracts the preg_* function family with syntactic sugar, simplicity, and consistency so you can stay up with [the haps on the craps](http://rapgenius.com/Ice-cube-it-was-a-good-day-lyrics#note-9194,'Ice Cube - Today Was a Good Day').
