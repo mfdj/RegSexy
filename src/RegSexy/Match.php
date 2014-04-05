@@ -6,8 +6,8 @@ class Match
 {
     public $match;
     public $offset;
-    public $sub = [];
-    public $subOffsets = [];
+    public $sub = array();
+    public $subOffsets = array();
 
     function __toString()
     {
