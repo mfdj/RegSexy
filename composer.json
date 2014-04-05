@@ -1,6 +1,15 @@
 {
     "name": "mfdj/regsexy",
-    "description": "Clean, fluent interface for the preg_* functions. Elegant object oriented regular expression creation and processing.",
+    "description": "Elegant regular expression creation and processing using clean, fluent interfaces.",
+    "type": "library",
+    "keywords": [
+	"regular expression",
+        "regexp",
+        "preg",
+        "oop",
+        "fluent interface"
+    ],
+    "homepage": "https://github.com/mfdj/RegSexy/",
     "license": "Creative Commons Attribution-ShareAlike 3.0 Unported License",
     "authors": [
         {
@@ -9,10 +18,12 @@
         }
     ],
     "require": {
-        "php": "~5.3"
+        "php": "~5.3",
+        "ext-pcre": "*"
     },
     "require-dev": {
-        "mfdj/fluenthtml": "~0.1"
+        "mfdj/fluenthtml": "~0.1",
+        "phpunit/phpunit": "~4"
     },
     "autoload": {
         "psr-0": {

@@ -2,20 +2,9 @@
 
 namespace RegSexy;
 
-/**
- * ToDO:
- *  • http://us1.php.net/manual/en/function.preg-replace-callback.php
- *  • http://us1.php.net/manual/en/function.preg-grep.php
- *  • http://us1.php.net/manual/en/function.preg-filter.php
- *
- * Do not want to implement:
- * • http://us1.php.net/manual/en/function.preg-quote.php
- */
-
 class RegEx
 {
-    // Static
-    private static $delimeter = "~";
+    const DELIMITER = "~";
 
     // Instance
     private $undelimitedPattern;
@@ -23,12 +12,11 @@ class RegEx
     private $getOffsets = true;
 
     /**
-     * A factory method for static contexts; useful for often use-it-once situations.
-     * New RegEx and ->pattern()
-     *
+     * A factory method for creting a new RegEx(…);
+     * useful for the common case of use-it-once.
      * @return RegEx
      */
-    public static function make($undelimitedPattern)
+    public static function make($undelimitedPattern = null)
     {
         $exp = new RegEx($undelimitedPattern);
 
@@ -58,12 +46,7 @@ class RegEx
 
     /**
      * Complies a Perl Compatible Regular Expression and returns itself
-     *
      * @param    $undelimitedPattern  String  A non-delimited PCRE pattern
-     * @internal $modifiers           String  Optional valid pattern modifiers for (see Modifiers).
-     *                                Modifiers can be expressed as a list of individual arguments or as a complete string.
-     *                                Passing null or '' results in no modifiers being used.
-     *
      * @return RegEx
      */
     public function pattern($undelimitedPattern)
@@ -74,24 +57,7 @@ class RegEx
     }
 
     /**
-     * Allows one to provide a delimited pattern.
-     *
-     * @param    $undelimitedPattern  String  A non-delimited PCRE pattern
-     * @internal $modifiers           String  Optional valid pattern modifiers for (see Modifiers).
-     *                                Modifiers can be expressed as a list of individual arguments or as a complete string.
-     *                                Passing null or '' results in no modifiers being used.
-     *
-     * @return RegEx
-     */
-    //    public function delemited($undelimitedPattern)
-    //    {
-    //        $this->undelimitedPattern = $undelimitedPattern;
-    //
-    //        return $this;
-    //    }
-
-    /**
-     * @param string , string, …
+     * @param string, string, …
      */
     public function modifiers()
     {
@@ -107,10 +73,15 @@ class RegEx
      */
     public function getRegEx()
     {
-        return static::$delimeter
-        . str_replace(static::$delimeter, '\\' . static::$delimeter, $this->undelimitedPattern)
-        . static::$delimeter
+        return self::DELIMITER
+        . str_replace(self::DELIMITER, '\\' . self::DELIMITER, $this->undelimitedPattern)
+        . self::DELIMITER
         . $this->modifiers;
+    }
+
+    public function getDelimeter()
+    {
+        return self::DELIMITER;
     }
 
     /**
@@ -172,7 +143,7 @@ class RegEx
 
         $i       = 0;
         $len     = count($results);
-        $matches = [];
+        $matches = array();
 
         // examine each result (i.e. a match to the expression)
         for (; $i < $len; $i++)
