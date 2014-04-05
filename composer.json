@@ -23,7 +23,8 @@
     },
     "require-dev": {
         "mfdj/fluenthtml": "~0.1",
-        "phpunit/phpunit": "~4"
+        "phpunit/phpunit": "~4",
+        "atoum/atoum": "0.0.1"
     },
     "autoload": {
         "psr-0": {
