@@ -196,7 +196,7 @@ class RegEx
      * @param int    $limit
      * @return array
      */
-    public static function split($input, $withDelims = false, $limit = -1)
+    public function split($input, $withDelims = false, $limit = -1)
     {
         return preg_split(
             $this->getRegEx(),
