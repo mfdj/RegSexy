@@ -1,7 +1,11 @@
+
 RegSexy
 ===========
 
-A PHP utility library that leverages the preg_* function family adding syntactic sugar, simplicity, and consistency so you can stay up on [the haps on the craps](http://rapgenius.com/Ice-cube-it-was-a-good-day-lyrics#note-9194,'Ice Cube - Today Was a Good Day'). Go outside, play with your best friend: the world's your oyester, kid!
+[![Latest Stable Version](https://poser.pugx.org/mfdj/regsexy/v/stable.png)](https://packagist.org/packages/mfdj/regsexy)
+[![Build Status](https://travis-ci.org/mfdj/RegSexy.png?branch=master)](http://travis-ci.org/mfdj/regsexy)
+
+A PHP library that abstracts the preg_* function family with syntactic sugar, simplicity, and consistency so you can stay up with [the haps on the craps](http://rapgenius.com/Ice-cube-it-was-a-good-day-lyrics#note-9194,'Ice Cube - Today Was a Good Day').
 
 ### Features
 
